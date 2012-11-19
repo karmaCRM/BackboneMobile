@@ -1,4 +1,4 @@
-window.App = new Backbone.Marionette.Application({
+window.App = new Backbone.Mobile.Application({
   Models: {},
   Collections: {},
   Routers: {},
@@ -10,5 +10,6 @@ App.addRegions({
 });
 
 App.on('initialize:after',function(){ 
+  console.log('here....')
   Backbone.history.start()
 });
