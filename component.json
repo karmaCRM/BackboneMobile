@@ -1,0 +1,25 @@
+{
+  "name"        : "Backbone.Mobile",
+  "description" : "Blah Blah!",
+  "url"         : "http://www.google.com",
+  "main"        : "./lib/backbone.mobile.js",
+  "version"     : "0.0.1",
+
+  "keywords"     : [
+    "backbone",
+    "framework",
+    "client",
+    "browser",
+    "composite",
+    "mobile"
+  ],
+  "author"       : {
+    "name"  : "JP & William",
+    "email" : "jnarowski@gmail.com"
+  },
+  "contributors" : [],
+  "dependencies" : {
+    "backbone" : "latest"
+  }
+}
+

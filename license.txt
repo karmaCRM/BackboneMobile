@@ -1,0 +1,7 @@
+// Backbone.Mobile v0.0.1
+//
+// Copyright (C)2012 karmaCRM
+// Distributed Under MIT License
+//
+// Documentation and Full License Available at:
+// http://github.com/marionettejs/backbone.marionette
