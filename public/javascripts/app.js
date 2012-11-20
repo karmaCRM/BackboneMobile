@@ -1,3 +1,15 @@
+// =======================================
+// appwide helper utils
+// =======================================
+
+window.l = function(values){
+  console.log(values)
+}
+
+// =======================================
+// app init
+// =======================================
+
 window.App = new Backbone.Mobile.Application({
   Models: {},
   Collections: {},
@@ -5,7 +17,7 @@ window.App = new Backbone.Mobile.Application({
   Views: {},
 });
 
-App.addRegions({
+App.addAppRegion({
   appRegion: '#main'
 });
 
