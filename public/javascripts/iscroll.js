@@ -26,7 +26,7 @@ var m = Math,
 	transform = prefixStyle('transform'),
 	transitionProperty = prefixStyle('transitionProperty'),
 	transitionDuration = prefixStyle('transitionDuration'),
-	transformOrigin = prefixStyle('transformOrigin'),
+	transformOrigin = prefixStyle('transform Origin'),
 	transitionTimingFunction = prefixStyle('transitionTimingFunction'),
 	transitionDelay = prefixStyle('transitionDelay'),
 
