@@ -28,8 +28,7 @@
   
     App.Views.TodoItemView = Backbone.Marionette.ItemView.extend({
       template: '#m-todoItem-template',
-      tagName: 'li',
-      className: 'm-list_item'
+      tagName: 'li'
     })
 
     App.Views.TodoItemsView = Backbone.Marionette.CompositeView.extend({
