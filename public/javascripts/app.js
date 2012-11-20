@@ -33,10 +33,12 @@ App.Routers.Main = Backbone.Router.extend({
   },
   index: function(){
     view = new App.Views.Home()
-    App.mainRegion.show(view)    
-    setTimeout(function () {
-     myScroll = new iScroll('scroller');
-    }, 100);
+    App.mainRegion.show(view) 
+    if(!App.overflowscrolling){
+      setTimeout(function () {
+       myScroll = new iScroll('scroller');
+      }, 100);      
+    }   
   }
 })
   
@@ -46,7 +48,14 @@ App.Routers.Main = Backbone.Router.extend({
 
 App.addInitializer(function() {
   new App.Routers.Main()
+  App.overflowscrolling = $('html').hasClass('overflowscrolling');
 });
+
+App.addInitializer(function() {
+  new App.Routers.Main()
+});
+
+
 
 App.on('initialize:after',function(){ 
   Backbone.history.start()

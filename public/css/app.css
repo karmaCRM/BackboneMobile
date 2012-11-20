@@ -25,11 +25,11 @@ html, body {
   background: green;
 }
 
-.iscroll-enabled .fixed-header { 
+.no-overflowscrolling .fixed-header { 
   position: absolute; 
 }
 
-.iscroll-enabled .fixed-footer { 
+.no-overflowscrolling .fixed-footer { 
   position: absolute; 
 }
 
@@ -39,7 +39,7 @@ html, body {
   width: 100%;
 }
 
-.scroll-body.ios6 {
+.overflowscrolling .scroll-body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;  
 }
