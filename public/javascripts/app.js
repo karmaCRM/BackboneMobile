@@ -5,7 +5,8 @@
     window.l = function(values) {
         console.log(values)
     }
-
+		
+		
     // =======================================
     // app init
     // =======================================
@@ -106,7 +107,7 @@
             function(item) {
                 // collection.remove(item);
                 item.destroy();
-                // collection.trigger('reset');
+                collection.trigger('reset');
             });
         },
         //returns the highest priority thusfar
@@ -169,7 +170,7 @@
             // App.listItemRegion.show(todoItems);
             if (!App.overflowscrolling) {
                 setTimeout(function() {
-                    myScroll = new iScroll('scroller');
+                    myScroll = new iScroll('wrapper');
                 },
                 100);
             }
@@ -220,4 +221,67 @@
 
 
     });
+
+
+		// ============================================
+		// = Scroll to refresh iScroll Implementation =
+		// ============================================
+		
+		var myScroll,
+			pullDownEl, pullDownOffset,
+			pullUpEl, pullUpOffset,
+			generatedCount = 0;
+
+		function pullDownAction () {
+
+			// todo: re-render based on a refreshed collection
+			// App.Collections.TodoCollection.refresh()
+			myScroll.refresh();
+		}
+
+
+		function loaded() {
+			pullDownEl = document.getElementById('pullDown');
+			pullDownOffset = pullDownEl.offsetHeight;
+
+
+			myScroll = new iScroll('wrapper', {
+				useTransition: true,
+				topOffset: pullDownOffset,
+				onRefresh: function () {
+					if (pullDownEl.className.match('loading')) {
+						pullDownEl.className = '';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+					} 
+				},
+				onScrollMove: function () {
+					if (this.y > 5 && !pullDownEl.className.match('flip')) {
+						pullDownEl.className = 'flip';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+						this.minScrollY = 0;
+					} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+						pullDownEl.className = '';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+						this.minScrollY = -pullDownOffset;
+					} else if (this.y < (this.maxScrollY - 5)) {
+						this.maxScrollY = this.maxScrollY;
+					} 
+				},
+				onScrollEnd: function () {
+					if (pullDownEl.className.match('flip')) {
+						pullDownEl.className = 'loading';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';				
+						pullDownAction();	
+					}
+				}
+			});
+
+			setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+		}
+
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+		document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 })(window);
+
+

@@ -19,6 +19,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+    
+    <script>
+    // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    // document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+    
+    // $(document).onReady(function() {
+    //               document.body.addEventListener('touchmove',function(e){
+    //                    if(!$(e.target).hasClass("scrollable")) {
+    //                      e.preventDefault();
+    //                    } 
+    //                });
+    //             });
+       // document.body.addEventListener('touchstart',function(e){
+       //             if(!$(e.target).hasClass("scrollable")) {
+       //               e.preventDefault();
+       //             }
+       //         });
+    </script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -45,9 +63,12 @@
     </div>
   </body>  
   <script type="text/template" id="m-listItem-template">
+    <div id="pullDown">
+    			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+    		</div>
     <div id="m-list-item-template-root">
       <ul id="scroller-content">
-      </div>
+      </ul>
     </div>
   </script>
   <script type="text/template" id="m-todoItem-template">
@@ -59,8 +80,11 @@
   </script>
   <div id="home" style='display: none;'>
     <div class='fixed-header'></div>
-    <div id='scroller' class='scroll-body has-header has-footer'>
-      <div class='scroller'>
+    <div id="wrapper" class='scroll-body has-header has-footer'>
+      <div id='scroller'>
+        
+        <div class='scroller'>
+        </div>
       </div>
     </div>
     <div class='fixed-footer'></div>    
