@@ -24,7 +24,7 @@ App.setupMainRegion('#app');
 // =======================================
 
 App.Views.Home = Backbone.Marionette.ItemView.extend({
-  template: "<h1>Here...Booyaaa</h1>",
+  template: "",
   onRender: function(){
   }
 })

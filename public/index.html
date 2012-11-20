@@ -21,6 +21,8 @@
     <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+
     <!-- core libs -->    
     <script src="javascripts/helper.js"></script>
     <script src="javascripts/modernizr-2.6.1.min.js"></script>
@@ -38,7 +40,11 @@
     <script src="javascripts/app.js"></script>   
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class='fixed-header'>Head</div>
+      <div class='scroll-body'>Here stuff......</div>
+      <div class='fixed-footer'><h1>Footer</h1></div>
+    </div>
   </body>  
   <script type="text/javascript" charset="utf-8">
     $(function(){ App.start() })
