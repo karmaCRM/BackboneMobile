@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/app.css"> -->
     <link rel="stylesheet" href="css/ratchet.css">
-
     <!-- core libs -->    
     <script src="javascripts/modernizr-2.6.1.min.js"></script>
     <script src="javascripts/helper.js"></script>
@@ -43,56 +42,15 @@
     <script src="javascripts/app.js"></script>   
   </head>
   <body>
-    <div id='app'></div>
+    <div id='app'>
+    </div>
   </body>  
-
   <script type="text/template" id="todos">  
-    <header class="bar-title">
-      <a class="button" href="#">
-        Left
-      </a>
-      <h1 class="title">Title</h1>
-      <a class="button" href="#">
-        Right
-      </a>
-    </header>
-    <nav class="bar-tab">
-      <ul class="tab-inner">
-        <li class="tab-item">
-          <a href="">
-            <img class="tab-icon" src="img/icon-home.png">
-            <div class="tab-label">Home</div>
-          </a>
-        </li>
-        <li class="tab-item">
-          <a href="">
-            <img class="tab-icon" src="img/icon-profile.png">
-            <div class="tab-label">Contacts</div>
-          </a>
-        </li>
-        <li class="tab-item active">
-          <a href="">
-            <img class="tab-icon" src="img/icon-messages.png">
-            <div class="tab-label">Tasks</div>
-          </a>
-        </li>
-        <li class="tab-item">
-          <a href="">
-            <img class="tab-icon" src="img/icon-hamburger.png">
-            <div class="tab-label">Label</div>
-          </a>
-        </li>
-        <li class="tab-item">
-          <a href="">
-            <img class="tab-icon" src="img/icon-settings.png">
-            <div class="tab-label">Settings</div>
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div id='header'></div>
     <div class='content'>
       <ul class="list"></ul>   
     </div>
+    <div id='nav'></div>
   </script>
   <script type="text/template" id="m-listItem-template">
     <div id="pullDown" style='display: none'>
@@ -118,31 +76,21 @@
     </div>
   </script>
   <script type="text/template" id="todos_show">
-    <div class='fixed-header header'>
-      <a class="button-prev" href="#">
-        Back
-      </a>
-      <h1 class='title'>Todo Show</h1></div>
-      <a href="#/tasks/<%= id %>/edit">Edit</a>      
-    </div>
-    <div id="wrapper" class='scroll-body can-scroll has-header has-footer'>
+    <div id='header'></div>
+    <div id="wrapper" class='content scroll-body can-scroll has-header has-footer'>
       <div id='scroller'>      
-        <div class='scroller content'>
-          Here....<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>There...<hr><hr><hr><hr><hr><hr>
-          Here....<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>There...<hr><hr><hr><hr><hr><hr>
-        </div>
+        Here....<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>There...<hr><hr><hr><hr><hr><hr>
+        Here....<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>There...<hr><hr><hr><hr><hr><hr>
       </div>
     </div>
+    <div id='nav'></div>
   </script>
   <script type="text/template" id="todos_edit">
-    <div class='fixed-header header'>
-      <a href="#/tasks/<%= id %>">Back</a>
-      <h1 class='title'>Edit</h1>
-      <a href="#/tasks/<%= id %>/edit">Back</a>
-    </div>
-    <div id="wrapper" class='scroll-body can-scroll has-header has-footer'>
+    <div id='header'></div>
+    <div id='nav'></div>
+    <div id="wrapper" class='content scroll-body can-scroll has-header has-footer'>
       <div id='scroller'>      
-        <div class='scroller content'>
+        <div class='scroller'>
           <form>
             <div class="input-group">
               <div class="input-row">

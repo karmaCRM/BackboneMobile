@@ -5,8 +5,7 @@
     window.l = function(values) {
         console.log(values)
     }
-		
-		
+			
     // =======================================
     // app init
     // =======================================
@@ -26,12 +25,12 @@
     App.Models.Todo = Backbone.Model.extend({})
     App.Collections.Todos = Backbone.Collection.extend({ model: App.Models.Todo})
   
-    App.Views.TodoItemView = Backbone.Marionette.ItemView.extend({
+    App.Views.TodoItemView = Backbone.Mobile.ItemView.extend({
       template: '#m-todoItem-template',
       tagName: 'li'
     })
 
-    App.Views.TodoItemsView = Backbone.Marionette.CompositeView.extend({
+    App.Views.TodoItemsView = Backbone.Mobile.CompositeView.extend({
       tagName: 'div',
       id: 'm-todoItems',
       className: 'm-listItems',
@@ -40,8 +39,9 @@
       itemViewContainer: '#scroller-content'
     })
     
-    App.Views.Todos = Backbone.Marionette.Layout.extend({
+    App.Views.Todos = Backbone.Mobile.Layout.extend({
       template: '#todos',
+      headerOptions: { title: 'Todos' },
       regions: {
         contentRegion: '.content'        
       },
@@ -54,17 +54,31 @@
       }
     });
 
-    App.Views.TodoShow = Backbone.Marionette.Layout.extend({
+    App.Views.TodoShow = Backbone.Mobile.Layout.extend({
         template: '#todos_show',
         regions: {
           contentRegion: '.content'        
+        },
+        getHeaderOptions: function(){
+          return { 
+            title : this.model && this.model.get('name'),
+            leftButton: { type: 'back', href: '#/tasks' },
+            rightButton: { type: 'edit', href: '#/tasks/' + this.model.id + '/edit' }
+          };
         }
     })
 
-    App.Views.TodoEdit = Backbone.Marionette.Layout.extend({
+    App.Views.TodoEdit = Backbone.Mobile.Layout.extend({
         template: '#todos_edit',
         regions: {
           contentRegion: '.content'        
+        },
+        getHeaderOptions: function(){
+          return { 
+            title : 'Edit',
+            leftButton: { type: 'cancel', href: '#/tasks/' + this.model.id },
+            rightButton: { type: 'save' }
+          };
         }
     })
       
