@@ -40,13 +40,13 @@
     <script src="javascripts/app.js"></script>   
   </head>
   <body>
-    <div id="app">
+    <div id="app" class='iscroll-enabled'>
     </div>
   </body>  
   <script type="text/javascript" charset="utf-8">
     $(function(){ App.start() })
   </script>
-  <div id="home">
+  <div id="home" style='display: none;'>
     <div class='fixed-header'>Head</div>
     <div id='scroller' class='scroll-body has-header has-footer'>
       <div class='scroller'>
@@ -68,6 +68,6 @@
       </p>
       </div>
     </div>
-    <div class='fixed-footer'><h1>Footer</h1></div>    
+    <div class='fixed-footer'>Footer</div>    
   </div>
 </html>
