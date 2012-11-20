@@ -17,20 +17,25 @@ window.App = new Backbone.Mobile.Application({
   Views: {},
 });
 
-App.addAppRegion({
-  appRegion: '#main'
-});
+App.setupMainRegion('#app');
 
 // =======================================
 // demo app codebase here
 // =======================================
+
+App.Views.Home = Backbone.Marionette.ItemView.extend({
+  template: "<h1>Here...Booyaaa</h1>",
+  onRender: function(){
+  }
+})
 
 App.Routers.Main = Backbone.Router.extend({
   routes: {
     ".*" : "index",
   },
   index: function(){
-    console.log('index....')      
+    view = new App.Views.Home()
+    App.mainRegion.show(view)    
   }
 })
   
