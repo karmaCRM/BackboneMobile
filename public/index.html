@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta http-equiv="cleartype" content="on">
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
@@ -51,14 +51,18 @@
     </div>
   </script>
   <script type="text/template" id="m-todoItem-template">
-    <div><%= name %> - <%= priority %></div>
+    <div class="m-list-item-splitview">
+      <div class="m-list-item-main-item split"><%= name %></div>
+      <div class="m-list-item-main-item split"><%= priority %></div>
+      <div class="clear"></div>
+    </div>
   </script>
   <div id="home" style='display: none;'>
-    <div class='fixed-header'>Head</div>
+    <div class='fixed-header'></div>
     <div id='scroller' class='scroll-body has-header has-footer'>
       <div class='scroller'>
       </div>
     </div>
-    <div class='fixed-footer'>Footer</div>    
+    <div class='fixed-footer'></div>    
   </div>
 </html>

@@ -11,8 +11,14 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 30px;
-  background: blue;
+  height: 50px;
+/*  background: #000;*/
+  -webkit-box-shadow: 0px 3px 17px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    0px 3px 17px rgba(50, 50, 50, 0.5);
+  box-shadow:         0px 3px 17px rgba(50, 50, 50, 0.5);
+background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000), color-stop(.01, #000),
+    color-stop(.02, #555), color-stop(.03, #2d2d2d), color-stop(.5, #151515), color-stop(.51, #000));
+    border-top: 1px rgba(255,255,255,0.3) solid;
 }
 
 .fixed-footer {
@@ -21,8 +27,11 @@ html, body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30px;
-  background: green;
+  height: 50px;
+/*  background: #000;*/
+background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000), color-stop(.01, #000),
+    color-stop(.02, #555), color-stop(.03, #2d2d2d), color-stop(.5, #151515), color-stop(.51, #000));
+    border-top: 1px rgba(255,255,255,0.3) solid;
 }
 
 .no-overflowscrolling .fixed-header { 
@@ -45,11 +54,11 @@ html, body {
 }
 
 .scroll-body.has-header {
-  top: 30px;
+  top: 50px;
 }
 
 .scroll-body.has-footer {
-  bottom: 30px;
+  bottom: 50px;
 }
 
 
@@ -65,6 +74,29 @@ html, body {
 	list-style: none;
 }
 #scroller-content li {
-	border-bottom: 1px solid #696969;
+	border-bottom: 1px solid #333;
 	padding: 10px 20px 10px 20px;
 }
+.m-list-item-main-item {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.split {
+	width: 49%;
+	float: left;
+}
+.clear {
+	clear: both;
+	width: 100%;
+}
+.m-list-item-main-item .split:first-child {
+	padding-right: 10px;
+}
+.m-list-item-main-item .split:last-child {
+	padding-left: 10px;
+	text-align: center;
+}
+
+
+
+
