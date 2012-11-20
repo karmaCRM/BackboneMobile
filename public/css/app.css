@@ -11,14 +11,12 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 25px;
+  height: 30px;
   background: blue;
 }
 
 .scroll-body {
   position: absolute;
-  top: 25px;
-  bottom: 25px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 /*  overflow-x: hidden;
@@ -27,12 +25,20 @@ html, body {
   width: 100%;
 }
 
+.scroll-body.has-header {
+  top: 30px;
+}
+
+.scroll-body.has-footer {
+  bottom: 30px;
+}
+
 .fixed-footer {
   z-index: 1;  
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25px;
+  height: 30px;
   background: green;
 }
