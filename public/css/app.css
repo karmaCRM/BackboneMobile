@@ -51,3 +51,20 @@ html, body {
 .scroll-body.has-footer {
   bottom: 30px;
 }
+
+
+
+
+
+/* ================== */
+/* = List Style CSS = */
+/* ================== */
+
+/* ul element */
+#scroller-content {
+	list-style: none;
+}
+#scroller-content li {
+	border-bottom: 1px solid #696969;
+	padding: 10px 20px 10px 20px;
+}
