@@ -21,6 +21,7 @@
     <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ratchet.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/app.css">
 
@@ -33,6 +34,7 @@
     <script src="javascripts/backbone.marionette.js"></script>   
     <!-- mobile specific -->
     <script src="javascripts/iscroll.js"></script>
+    <script src="javascripts/fastclick.js"></script>
     <script src="javascripts/hammer.js"></script>
     <script src="javascripts/jquery.hammer.js"></script>
     <!-- bbm specific -->
@@ -41,34 +43,101 @@
     <script src="javascripts/app.js"></script>   
   </head>
   <body>
-    <div id="app" class='iscroll-enabled'>
+    <div id="app">
     </div>
+    <div class='fixed-footer'>
+      <a href='#tasks'>Tasks</a>
+    </div>    
   </body>  
   <script type="text/template" id="m-listItem-template">
-    <div id="pullDown">
-    			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
-    		</div>
+    <div id="pullDown" style='display: none'>
+      <span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+    </div>
     <div id="m-list-item-template-root">
       <ul id="scroller-content">
       </ul>
     </div>
   </script>
   <script type="text/template" id="m-todoItem-template">
-    <div class="m-list-item-splitview">
-      <div class="m-list-item-main-item split"><%= name %></div>
-      <div class="m-list-item-main-item split"><%= priority %></div>
-      <div class="clear"></div>
-    </div>
+    <a href="#/tasks/<%= id %>">
+      <%= name %>
+    </a>
   </script>
-  <div id="home" style='display: none;'>
-    <div class='fixed-header'></div>
-    <div id="wrapper" class='scroll-body has-header has-footer'>
-      <div id='scroller'>
-        
-        <div class='scroller'>
+  <script type="text/template" id="todos">
+    <div class='fixed-header header'><h1 class='title'>Todos</h1></div>
+    <div id="wrapper" class='scroll-body can-scroll has-header has-footer'>
+      <div id='scroller'>      
+        <div class='scroller content'>
         </div>
       </div>
     </div>
-    <div class='fixed-footer'></div>    
-  </div>
+  </script>
+  <script type="text/template" id="todos_show">
+    <div class='fixed-header header'>
+      <a href="#">Back</a>   
+      <h1 class='title'>Todo Show</h1></div>
+      <a href="#/tasks/<%= id %>/edit">Edit</a>      
+    </div>
+    <div id="wrapper" class='scroll-body can-scroll has-header has-footer'>
+      <div id='scroller'>      
+        <div class='scroller content'>
+          Here....<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>There...<hr><hr><hr><hr><hr><hr>
+          Here....<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>There...<hr><hr><hr><hr><hr><hr>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script type="text/template" id="todos_edit">
+    <div class='fixed-header header'>
+      <a href="#/tasks/<%= id %>">Back</a>
+      <h1 class='title'>Edit</h1>
+      <a href="#/tasks/<%= id %>/edit">Back</a>
+    </div>
+    <div id="wrapper" class='scroll-body can-scroll has-header has-footer'>
+      <div id='scroller'>      
+        <div class='scroller content'>
+          <form>
+            <div class="input-group">
+              <div class="input-row">
+                <label>Full name</label>
+                <input type="text" placeholder="Mister Ratchet">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label>Username</label>
+                <input type="text" placeholder="goRatchet">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </script>
 </html>
