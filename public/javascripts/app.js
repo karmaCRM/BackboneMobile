@@ -9,7 +9,10 @@ App.addRegions({
   appRegion: '#main'
 });
 
+App.addInitializer = function(){
+  new Backbone.Router()
+}
+  
 App.on('initialize:after',function(){ 
-  console.log('here....')
   Backbone.history.start()
 });
