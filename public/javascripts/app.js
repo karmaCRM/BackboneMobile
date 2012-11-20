@@ -55,8 +55,6 @@ App.addInitializer(function() {
   new App.Routers.Main()
 });
 
-
-
 App.on('initialize:after',function(){ 
   Backbone.history.start()
 });
