@@ -24,7 +24,7 @@ App.setupMainRegion('#app');
 // =======================================
 
 App.Views.Home = Backbone.Marionette.ItemView.extend({
-  template: "",
+  template: '#home',
   onRender: function(){
   }
 })
@@ -36,6 +36,9 @@ App.Routers.Main = Backbone.Router.extend({
   index: function(){
     view = new App.Views.Home()
     App.mainRegion.show(view)    
+    // setTimeout(function () {
+    //  myScroll = new iScroll('scroller');
+    // }, 100);
   }
 })
   
